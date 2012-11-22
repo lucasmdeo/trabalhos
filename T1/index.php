@@ -16,6 +16,6 @@
 	$sess['start']='0';
 	file_put_contents("DB.txt", serialize($sess));
 	//encaminha para a pagina do player1
-	header("location: http://lucasmartins.phpfogapp.com/T1/wait.php");
+	header("location: wait.php");
 	?>
 	

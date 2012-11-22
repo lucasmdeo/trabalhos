@@ -1,5 +1,5 @@
 <?php
-require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
+require_once '/lib.php';
 	$sess = unserialize(file_get_contents("DB.txt"));
 			$jogada11 = $sess['11'];
 			$jogada12 = $sess['12'];
@@ -58,6 +58,7 @@ require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
 					$sess['player1']='1';
 					$sess['player2']='0';
 				}
+				
 				file_put_contents("DB.txt", serialize($sess));
 			}
 			winner();
@@ -69,7 +70,7 @@ require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
 			}
 		}
 		if(($sess['winner']=='1')||($sess['winner']=='2')){
-			header("location: http://lucasmartins.phpfogapp.com/t1/result.php");
+			header("location: result.php");
 		}
 ?>
 <?php
@@ -80,19 +81,19 @@ require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
 			<div>
 			<table>	
 			<tr>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=11"><img src="<?php echo $jogada11 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=12"><img src="<?php echo $jogada12 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=13"><img src="<?php echo $jogada13 ?>"></a></td>
+			<td><a href="player1.php?pos=11"><img src="<?php echo $jogada11 ?>"></a></td>
+			<td><a href="player1.php?pos=12"><img src="<?php echo $jogada12 ?>"></a></td>
+			<td><a href="player1.php?pos=13"><img src="<?php echo $jogada13 ?>"></a></td>
 			</tr>
 			<tr>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=21"><img src="<?php echo $jogada21 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=22"><img src="<?php echo $jogada22 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=23"><img src="<?php echo $jogada23 ?>"></a></td>
+			<td><a href="player1.php?pos=21"><img src="<?php echo $jogada21 ?>"></a></td>
+			<td><a href="player1.php?pos=22"><img src="<?php echo $jogada22 ?>"></a></td>
+			<td><a href="player1.php?pos=23"><img src="<?php echo $jogada23 ?>"></a></td>
 			</tr>
 			<tr>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=31"><img src="<?php echo $jogada31 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=32"><img src="<?php echo $jogada32 ?>"></a></td>
-			<td><a href="http://lucasmartins.phpfogapp.com/T1/player1.php?pos=33"><img src="<?php echo $jogada33 ?>"></a></td>
+			<td><a href="player1.php?pos=31"><img src="<?php echo $jogada31 ?>"></a></td>
+			<td><a href="player1.php?pos=32"><img src="<?php echo $jogada32 ?>"></a></td>
+			<td><a href="player1.php?pos=33"><img src="<?php echo $jogada33 ?>"></a></td>
 			</tr>
 			</table>
 			</div>

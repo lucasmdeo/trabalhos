@@ -10,3 +10,4 @@ require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
 		else{
 			echo "The winner is: player 2";
 		}
+		?>

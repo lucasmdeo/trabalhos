@@ -88,3 +88,4 @@
 				file_put_contents("DB.txt", serialize($sess));
 			}
 	}
+	?>

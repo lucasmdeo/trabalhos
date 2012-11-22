@@ -11,5 +11,7 @@
 			cabecalho("Stop Room");
 			echo "<p>Link para segundo jogador: http://lucasmartins.phpfogapp.com/T1/player2.php</p>";
 			echo '<br/>';
-			rodape();
-		}
+			echo '</body>';
+			echo '</html>';
+			}
+			?>

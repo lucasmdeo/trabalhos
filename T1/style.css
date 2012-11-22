@@ -1,0 +1,44 @@
+@CHARSET "ISO-8859-1";
+
+/* Arquivo CSS de layout da página do Jogo da Velha - Multiplayer */
+
+div {
+	background-color: red;	
+}
+
+/* Seletor para tabela */
+table {
+	border: medium;
+	border-color: yellow;
+	background-color: blue;
+	position: relative;
+	top: 50px;
+	left: 33%;
+}
+
+td {
+	height: 150px;
+	width: 150px;	
+}
+
+tr {
+	height: 150px;
+	width: 150px;
+}
+
+img {
+	height: 150px;
+	width: 150px;
+}
+a {
+	background-color:green;
+	position: relative;
+	height: 200px;
+	width: 200px;
+}
+
+#titulo{
+	font-size: xx-large;
+	font-style: oblique;
+	text-align: center;
+}

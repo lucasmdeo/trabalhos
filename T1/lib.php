@@ -4,7 +4,7 @@
 		echo '<html lang="en-GB">';
 		echo '<head>';
 		echo '<link rel="stylesheet" type="text/css" href="http://lucasmartins.phpfogapp.com/T1/style.css"/>';
-		echo '<meta http-equiv="refresh" content="1">';
+		echo '<meta http-equiv="refresh" content="100000">';
 		echo '<meta charset="utf-8">';
 		echo "<title>$nomePag</title>";
 		echo '</head>';

@@ -1,5 +1,5 @@
 <?php
-require_once '/lib.php';
+require_once 'http://lucasmartins.phpfogapp.com/T1/lib.php';
 $sess = unserialize(file_get_contents("DB.txt"));
 	if($sess['start']=='0'){
 		$sess['player2']='1';	

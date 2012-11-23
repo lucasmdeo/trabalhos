@@ -10,6 +10,17 @@
 		echo '</head>';
 		echo '<body>';
 	}
+	
+	function cabecalhoWait($nomePag){
+		echo '<!DOCTYPE html>';
+		echo '<html lang="en-GB">';
+		echo '<head>';
+		echo '<link rel="stylesheet" type="text/css" href="style.css"/>';
+		echo '<meta charset="utf-8">';
+		echo "<title>$nomePag</title>";
+		echo '</head>';
+		echo '<body>';
+	}
 
 	function rodape(){
 		echo "<br>Copyright - Lucas Martins de Oliveira</br>";
@@ -20,6 +31,11 @@
 
 	function winner(){
 		$sess = unserialize(file_get_contents("DB.txt"));
+		
+		if(($sess['11']!='w.png')&&($sess['12']!='w.png')&&($sess['13']!='w.png')&&($sess['21']!='w.png')&&($sess['22']!='w.png')&&($sess['23']!='w.png')&&($sess['31']!='w.png')&&($sess['32']!='w.png')&&($sess['33']!='w.png')){
+			$sess['winner']='3';
+			file_put_contents("DB.txt", serialize($sess));
+		}
 		//testa vitorias do jogador 1
 			if(($sess['11']=='x.png')&&($sess['12']=='x.png')&&($sess['13']=='x.png')){
 				$sess['winner']='1';
@@ -87,5 +103,6 @@
 				$sess['winner']='2';
 				file_put_contents("DB.txt", serialize($sess));
 			}
+			
 	}
 	?>

@@ -1,18 +1,17 @@
 @CHARSET "ISO-8859-1";
 
-/* Arquivo CSS de layout da página do Jogo da Velha - Multiplayer */
-
 div {
-	background-color: red;	
+	background-color: green;
+	height: 110%;
+	width: 100%;	
 }
 
-/* Seletor para tabela */
+/* Selector for table */ 
 table {
 	border: medium;
-	border-color: yellow;
-	background-color: blue;
+	border-color: black;
+	background-color: black;
 	position: relative;
-	top: 50px;
 	left: 33%;
 }
 
@@ -31,14 +30,37 @@ img {
 	width: 150px;
 }
 a {
-	background-color:green;
+	background-color:black;
 	position: relative;
 	height: 200px;
 	width: 200px;
 }
 
-#titulo{
+#title{
+	text-align:center;
+	height: 100%;
+	width: 100%;
+	float: center;
 	font-size: xx-large;
 	font-style: oblique;
-	text-align: center;
+	padding-left: 45%;
+}
+
+#link{
+	text-align:center;
+	position: center;
+	height: 100%;
+	width: 100%;
+	padding-left: 33%;
+	font-size: large;
+	font-style: arial;
+}
+
+#link2{
+	text-align:center;
+	height: 100%;
+	width: 100%;
+	font-size: x-large;
+	font-style: arial;
+	
 }

@@ -1,10 +1,14 @@
 <?php
 require_once 'lib.php';
 $sess = unserialize(file_get_contents("DB.txt"));
-	if($sess['start']=='0'){
-		$sess['player2']='1';	
-	}
-file_put_contents("DB.txt", serialize($sess));
+	if($sess['start']=='1'){
+		$sess['player2']='1';
+		$sess['player1']='0';
+		$sess['p2name']=$_GET['name2'];
+		$sess['p2email']=$_GET['email2'];
+		$sess['start']='2';
+	file_put_contents("DB.txt", serialize($sess));
+}
 
 $sess = unserialize(file_get_contents("DB.txt"));
 $jogada11 = $sess['11'];
@@ -16,6 +20,10 @@ $jogada23 = $sess['23'];
 $jogada31 = $sess['31'];
 $jogada32 = $sess['32'];
 $jogada33 = $sess['33'];
+$j1name = $sess['p1name'];
+$j1email = $sess['p1email'];
+$j2name = $sess['p2name'];
+$j2email = $sess['p2email'];
 
 function imgSwapP1($position){
 	$sess = unserialize(file_get_contents("DB.txt"));
@@ -73,35 +81,51 @@ if(($sess['player2']=='0')&&($sess['winner']=='0')){
 		imgSwapP1($pos);
 	}
 }
-if(($sess['winner']=='1')||($sess['winner']=='2')){
-	header("location: result.php");
-}
 ?>
+
 <?php
 	require_once 'lib.php';
- 	cabecalho("Tic Tac Toe"); 
+ 	cabecalho("Tic Tac Toe - Player 2"); 
  	?>
-		<form method="post">
-			<div>
-			<table>	
-			<tr>
-			<td><a href="player2.php?pos=11"><img src="<?php echo $jogada11 ?>"></a></td>
-			<td><a href="player2.php?pos=12"><img src="<?php echo $jogada12 ?>"></a></td>
-			<td><a href="player2.php?pos=13"><img src="<?php echo $jogada13 ?>"></a></td>
-			</tr>
-			<tr>
-			<td><a href="player2.php?pos=21"><img src="<?php echo $jogada21 ?>"></a></td>
-			<td><a href="player2.php?pos=22"><img src="<?php echo $jogada22 ?>"></a></td>
-			<td><a href="player2.php?pos=23"><img src="<?php echo $jogada23 ?>"></a></td>
-			</tr>
-			<tr>
-			<td><a href="player2.php?pos=31"><img src="<?php echo $jogada31 ?>"></a></td>
-			<td><a href="player2.php?pos=32"><img src="<?php echo $jogada32 ?>"></a></td>
-			<td><a href="player2.php?pos=33"><img src="<?php echo $jogada33 ?>"></a></td>
-			</tr>
-			</table>
-			</div>
+ 	<div>
+		<form method="GET">
+		<b id="title"><?php echo "$j1name X $j2name" ?></b><br>
+		<?php if(($sess['player2']=='0')&&($sess['winner']=='0')){
+			echo '<center><b id="link2">Your turn</b></center>';
+		}
+		if(($sess['player2']=='1')&&($sess['winner']=='0')){
+			echo "<center><b id='link2'>$j1name turn</b></center>";
+		}
+		if(($sess['winner']=='1')||($sess['winner']=='2')||($sess['winner']=='3')){
+			if($sess['winner']=='1'){
+				echo'<center><b id="link2">You LOOSE!</b></center>';
+				}
+			if($sess['winner']=='2'){
+				echo'<center><b id="link2">You WIN!</b></center>';
+				}
+			if($sess['winner']=='3'){
+				echo'<center><b id="link2">DRAW!</b></center>';
+				}
+			} ?>
+				<table>	
+					<tr>
+						<td><a href="player2.php?pos=11"><img src="<?php echo $jogada11 ?>"></a></td>
+						<td><a href="player2.php?pos=12"><img src="<?php echo $jogada12 ?>"></a></td>
+						<td><a href="player2.php?pos=13"><img src="<?php echo $jogada13 ?>"></a></td>
+					</tr>
+					<tr>
+						<td><a href="player2.php?pos=21"><img src="<?php echo $jogada21 ?>"></a></td>
+						<td><a href="player2.php?pos=22"><img src="<?php echo $jogada22 ?>"></a></td>
+						<td><a href="player2.php?pos=23"><img src="<?php echo $jogada23 ?>"></a></td>
+					</tr>
+					<tr>
+						<td><a href="player2.php?pos=31"><img src="<?php echo $jogada31 ?>"></a></td>
+						<td><a href="player2.php?pos=32"><img src="<?php echo $jogada32 ?>"></a></td>
+						<td><a href="player2.php?pos=33"><img src="<?php echo $jogada33 ?>"></a></td>
+					</tr>
+				</table>
 		</form>
-		<br>Copyright - Lucas Martins de Oliveira
-			</body>
-			</html>		
+			<br><br><b id="link">Copyright - Lucas Martins de Oliveira</b>
+			</div>
+	</body>
+</html>		

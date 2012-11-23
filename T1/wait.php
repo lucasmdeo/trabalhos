@@ -8,8 +8,8 @@
 			header("location: player1.php");
 		}
 		else{
-			cabecalho("Stop Room");
-			echo "<p>Link para segundo jogador: http://lucasmartins.phpfog/T1/player2.php</p>";
+			cabecalhoWait("Stop Room");
+			echo "<p>Link para segundo jogador: http://lucasmartins.phpfogapp.com/T1/player2.php</p>";
 			echo '<br/>';
 			rodape();
 		}

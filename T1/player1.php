@@ -1,6 +1,14 @@
 <?php
 require_once 'lib.php';
 	$sess = unserialize(file_get_contents("DB.txt"));
+			if($sess['start']=='0'){
+				$sess['p1name']=$_GET['name'];
+				$sess['p1email']=$_GET['email'];
+				$sess['start']='1';
+			file_put_contents("DB.txt", serialize($sess));
+			}
+	
+	$sess = unserialize(file_get_contents("DB.txt"));
 			$jogada11 = $sess['11'];
 			$jogada12 = $sess['12'];
 			$jogada13 = $sess['13'];
@@ -10,7 +18,11 @@ require_once 'lib.php';
 			$jogada31 = $sess['31'];
 			$jogada32 = $sess['32'];
 			$jogada33 = $sess['33'];
-		
+			$j1name = $sess['p1name'];
+			$j1email = $sess['p1email'];
+			$j2name = $sess['p2name'];
+			$j2email = $sess['p2email'];
+			
 			function imgSwapP1($position){
 				$sess = unserialize(file_get_contents("DB.txt"));
 				if(($position == 11)&&($sess['11']=='w.png')){
@@ -69,16 +81,31 @@ require_once 'lib.php';
 				imgSwapP1($pos);
 			}
 		}
-		if(($sess['winner']=='1')||($sess['winner']=='2')){
-			header("location: result.php");
-		}
 ?>
 <?php
 	require_once 'lib.php';
- 	cabecalho("Tic Tac Toe"); 
+ 	cabecalho("Tic Tac Toe - Player 1"); 
  	?>
-		<form method="post">
-			<div>
+ 	<div>
+ 		<form method="get">
+		<b id="title"><?php echo "$j1name X $j2name" ?></b><br>
+		<?php if(($sess['player1']=='0')&&($sess['winner']=='0')){
+			echo '<center><b id="link2">Your turn</b></center>';
+		}
+		if(($sess['player1']=='1')&&($sess['winner']=='0')){
+			echo "<center><b id='link2'>$j2name turn</b></center>";
+		}
+		if(($sess['winner']=='1')||($sess['winner']=='2')||($sess['winner']=='3')){
+			if($sess['winner']=='1'){
+				echo'<center><b id="link2">You WIN!</b></center>';
+				}
+			if($sess['winner']=='2'){
+				echo'<center><b id="link2">You LOOSE!</b></center>';
+				}
+			if($sess['winner']=='3'){
+				echo'<center><b id="link2">DRAW!</b></center>';
+				}
+			} ?>
 			<table>	
 			<tr>
 			<td><a href="player1.php?pos=11"><img src="<?php echo $jogada11 ?>"></a></td>
@@ -96,8 +123,17 @@ require_once 'lib.php';
 			<td><a href="player1.php?pos=33"><img src="<?php echo $jogada33 ?>"></a></td>
 			</tr>
 			</table>
-			</div>
+			
 		</form>
-		<br>Copyright - Lucas Martins de Oliveira
+		<?php
+			if($sess['winner']=='0'){ 
+		echo "<br><b id='link'>Link for second player: http://lucasmartins.phpfogapp.com/T1/login.php</b>";
+			}
+			else{
+		echo "<br><b id='title'>Link for a new match: http://lucasmartins.phpfogapp.com/T1/index.php.php</b>";
+			}
+		?>
+		<br><b id="link">Copyright - Lucas Martins de Oliveira</b>
+		</div>
 			</body>
 			</html>		

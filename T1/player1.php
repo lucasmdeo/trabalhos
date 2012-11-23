@@ -130,7 +130,7 @@ require_once 'lib.php';
 		echo "<br><b id='link'>Link for second player: http://lucasmartins.phpfogapp.com/T1/login.php</b>";
 			}
 			else{
-		echo "<br><b id='title'>Link for a new match: http://lucasmartins.phpfogapp.com/T1/index.php.php</b>";
+		echo "<br><b id='link'>Link for a new match: http://lucasmartins.phpfogapp.com/T1/index.php.php</b>";
 			}
 		?>
 		<br><b id="link">Copyright - Lucas Martins de Oliveira</b>

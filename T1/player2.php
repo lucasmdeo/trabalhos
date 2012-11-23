@@ -98,7 +98,7 @@ if(($sess['player2']=='0')&&($sess['winner']=='0')){
 		}
 		if(($sess['winner']=='1')||($sess['winner']=='2')||($sess['winner']=='3')){
 			if($sess['winner']=='1'){
-				echo'<center><b id="link2">You LOOSE!</b></center>';
+				echo'<center><b id="link2">You LOSE!</b></center>';
 				}
 			if($sess['winner']=='2'){
 				echo'<center><b id="link2">You WIN!</b></center>';

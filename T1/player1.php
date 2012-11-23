@@ -100,7 +100,7 @@ require_once 'lib.php';
 				echo'<center><b id="link2">You WIN!</b></center>';
 				}
 			if($sess['winner']=='2'){
-				echo'<center><b id="link2">You LOOSE!</b></center>';
+				echo'<center><b id="link2">You LOSE!</b></center>';
 				}
 			if($sess['winner']=='3'){
 				echo'<center><b id="link2">DRAW!</b></center>';

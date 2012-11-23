@@ -1,5 +1,5 @@
 <?php
-	require_once '/lib.php';
+	require_once 'lib.php';
 	$sess = unserialize(file_get_contents("DB.txt"));
 		if($sess['player2']=='1'){
 			$sess['player1']='0';
@@ -9,7 +9,7 @@
 		}
 		else{
 			cabecalho("Stop Room");
-			echo "<p>Link para segundo jogador: lucasmartins.phpfog/T1/player2.php</p>";
+			echo "<p>Link para segundo jogador: http://lucasmartins.phpfog/T1/player2.php</p>";
 			echo '<br/>';
 			rodape();
 		}

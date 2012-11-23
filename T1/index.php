@@ -20,7 +20,7 @@ require_once 'lib.php';
 	file_put_contents("DB.txt", serialize($sess));
 	
 	cabecalhoWait("Login");
-	echo '<form action = "http://localhost/T1/player1.php" method = "get">';
+	echo '<form action = "http://lucasmartins.phpfogapp.com/T1/player1.php" method = "get">';
 	echo 'Name: <input type = "text" name = "name"/><br>';
 	echo 'Email: <input type = "text" name = "email"/><br>';
 	echo '<input type = "submit" value="enviar"/>';

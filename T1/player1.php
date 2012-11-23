@@ -1,5 +1,5 @@
 <?php
-require_once '/lib.php';
+require_once 'lib.php';
 	$sess = unserialize(file_get_contents("DB.txt"));
 			$jogada11 = $sess['11'];
 			$jogada12 = $sess['12'];
@@ -74,7 +74,7 @@ require_once '/lib.php';
 		}
 ?>
 <?php
-	require_once '/lib.php';
+	require_once 'lib.php';
  	cabecalho("Tic Tac Toe"); 
  	?>
 		<form method="post">
